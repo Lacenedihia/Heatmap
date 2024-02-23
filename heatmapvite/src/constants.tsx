@@ -1,4 +1,4 @@
-export const MARGIN = { top: 80, right: 180, bottom: 80, left: 70 };
+export const MARGIN = { top: 80, right: 180, bottom: 60, left: 70 };
 //COLOR OF THE HEATMAP
 export const COLOR_LEGEND_HEIGHT = 70;
 

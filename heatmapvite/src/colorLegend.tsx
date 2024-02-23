@@ -27,7 +27,7 @@ export const ColorLegend = ({
   const max = domain[domain.length - 1];
   const xScale = d3.scaleLinear().range([0, boundsWidth]).domain([0, max]);
 
-  const allTicks = xScale.ticks(4).map((tick) => {
+  const allTicks = xScale.ticks(8).map((tick) => {
     return (
       <>
         <line
@@ -39,9 +39,11 @@ export const ColorLegend = ({
         />
         <text
           x={xScale(tick)}
-          y={boundsHeight + 20}
-          fontSize={9}
+          y={boundsHeight + 30}
+          fontSize={15}
           textAnchor="middle"
+          fontWeight="bold"
+          font-family="sans-serif"
         >
           {tick / 1000 + "k"}
         </text>

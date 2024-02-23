@@ -1,4 +1,4 @@
-import {  useMemo } from "react";
+import { useMemo } from "react";
 import * as d3 from "d3";
 import { interactionData } from "./heatmap";
 import { MARGIN } from "./constants";
@@ -67,7 +67,7 @@ export const Renderer = ({
         fill={d.value ? colorScale(d.value) : "#000000"}
         onMouseEnter={() => {
           setHoveredCell({
-            xLabel: +(d.x),
+            xLabel: +d.x,
             yLabel: d.y,
             xPos: xPos + xScale.bandwidth() + MARGIN.left,
             yPos: yPos + xScale.bandwidth() / 2 + MARGIN.top,
@@ -80,7 +80,7 @@ export const Renderer = ({
   const title = "Number of Measles Cases Across 70 Years and 50 States";
   const xlab = "Years";
   const ylab = "States";
-  const leg = "Color Legend";
+  
   const xLabels = allXGroups.map((name, i) => {
     if (name && Number(name) % 10 === 0) {
       return (
@@ -95,9 +95,7 @@ export const Renderer = ({
           fill="black"
         >
           {name}
-          
         </text>
-        
       );
     }
   });
@@ -116,7 +114,6 @@ export const Renderer = ({
         >
           {name}
         </text>
-        
       );
     }
   });
@@ -149,11 +146,10 @@ export const Renderer = ({
       </text>
       <text
         x={width / 2.3}
-        y={MARGIN.bottom + 465}
+        y={height - 10}
         textAnchor="middle"
         dominantBaseline="middle"
         fontSize={20}
-        
         font-family="sans-serif"
       >
         {xlab}
@@ -165,22 +161,9 @@ export const Renderer = ({
         textAnchor="middle"
         dominantBaseline="middle"
         fontSize={20}
-        
         font-family="sans-serif"
       >
         {ylab}
-      </text>
-      <text
-        x={height / 4}
-        y={MARGIN.right + 750}
-        transform={`rotate(-90, ${height / 18}, ${MARGIN.right + 150})`}
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fontSize={20}
-        
-        font-family="sans-serif"
-      >
-        {leg}
       </text>
     </svg>
   );
