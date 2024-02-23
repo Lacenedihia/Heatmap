@@ -77,7 +77,10 @@ export const Renderer = ({
       />
     );
   });
-
+  const title = "Number of Measles Cases Across 70 Years and 50 States";
+  const xlab = "Years";
+  const ylab = "States";
+  const leg = "Color Legend";
   const xLabels = allXGroups.map((name, i) => {
     if (name && Number(name) % 10 === 0) {
       return (
@@ -92,6 +95,7 @@ export const Renderer = ({
           fill="black"
         >
           {name}
+          
         </text>
         
       );
@@ -112,6 +116,7 @@ export const Renderer = ({
         >
           {name}
         </text>
+        
       );
     }
   });
@@ -131,6 +136,52 @@ export const Renderer = ({
         {xLabels}
         {yLabels}
       </g>
+      <text
+        x={width / 2}
+        y={MARGIN.top / 2}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontSize={20}
+        fontWeight="bold"
+        font-family="sans-serif"
+      >
+        {title}
+      </text>
+      <text
+        x={width / 2.3}
+        y={MARGIN.bottom + 465}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontSize={20}
+        
+        font-family="sans-serif"
+      >
+        {xlab}
+      </text>
+      <text
+        x={height / 10}
+        y={MARGIN.right + 140}
+        transform={`rotate(-90, ${height / 18}, ${MARGIN.right + 150})`}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontSize={20}
+        
+        font-family="sans-serif"
+      >
+        {ylab}
+      </text>
+      <text
+        x={height / 4}
+        y={MARGIN.right + 750}
+        transform={`rotate(-90, ${height / 18}, ${MARGIN.right + 150})`}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontSize={20}
+        
+        font-family="sans-serif"
+      >
+        {leg}
+      </text>
     </svg>
   );
 };

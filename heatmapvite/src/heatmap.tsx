@@ -38,7 +38,7 @@ export const Heatmap = ({
     .scaleLinear<string>()
     .domain(THRESHOLDS.map((t) => t * max))
     .range(COLORS);
-
+  
   return (
     <div style={{ position: "absolute" }}>
       <Renderer
@@ -62,5 +62,6 @@ export const Heatmap = ({
         />
       </div>
     </div>
+    
   );
 };
