@@ -146,7 +146,7 @@ export const Renderer = ({
       </text>
       <text
         x={width / 2.3}
-        y={height - 10}
+        y={height-28}
         textAnchor="middle"
         dominantBaseline="middle"
         fontSize={20}
